@@ -1,27 +1,38 @@
 # Paura
 
-**Paura** to lokalna aplikacja dla systemu Windows, wspierająca sprzedawców w codziennej obsłudze zamówień na platformie Allegro.
+**Paura (Paczka + Faktura)** to lokalna aplikacja dla systemu Windows, wspomagająca codzienną obsługę sprzedaży na platformie Allegro.
 
-### Funkcjonalności
+Aplikacja jest przeznaczona do prywatnego użytku w dwóch niezależnych sklepach. Nie jest usługą SaaS ani publicznie udostępnianym systemem dla sprzedawców.
 
-- Pobieranie i synchronizacja zamówień przez Allegro REST API.
-- Przeglądanie zamówień, produktów i metod dostawy.
-- Masowe nadawanie przesyłek przez Wysyłam z Allegro.
-- Generowanie i drukowanie etykiet przewozowych.
-- Planowana obsługa faktur i integracja z KSeF.
+## Funkcjonalności
 
-### Informacje techniczne
+- **Zamówienia Allegro:** synchronizacja zamówień, podgląd szczegółów i statusów oraz zarządzanie wysyłką.
+- **Wysyłam z Allegro:** tworzenie przesyłek dla obsługiwanych metod dostawy, zbiorcze nadawanie i generowanie etykiet A6/A4.
+- **Faktury VAT:** automatyczne przygotowywanie szkiców na podstawie opłaconych zamówień z żądaniem faktury, ręczne wystawianie i obsługa faktur korygujących.
+- **KSeF 2.0:** integracja z Krajowym Systemem e-Faktur, obsługa FA(3), statusów dokumentów i UPO.
+- **Dokumenty Allegro:** przekazywanie plików PDF faktur do odpowiednich zamówień.
+- **Historia:** lokalna ewidencja dokumentów, przesyłek i operacji.
 
-Aplikacja działa lokalnie na komputerze użytkownika i komunikuje się z Allegro za pośrednictwem oficjalnego REST API.
+## Architektura i bezpieczeństwo
 
-Projekt jest obecnie w fazie rozwoju i testów.
+Paura działa lokalnie na komputerze użytkownika, z wykorzystaniem interfejsu dostępnego w przeglądarce.
 
-Paura jest niezależnym projektem i nie jest oficjalną aplikacją Allegro.
+Dane poszczególnych sklepów są przechowywane w oddzielnych lokalnych instalacjach. Aplikacja komunikuje się z Allegro za pomocą oficjalnego REST API i OAuth, a z KSeF za pomocą oficjalnego API KSeF 2.0.
 
-### Kontakt
+Dostęp do konta Allegro wymaga autoryzacji przez jego właściciela. Aplikacja nie wymaga przekazywania hasła Allegro.
 
-W sprawach technicznych można skontaktować się z administratorem projektu za pośrednictwem e-mail bloomnote.studio@gmail.com
+## Status projektu
+
+Aplikacja jest w fazie przygotowania do wdrożenia produkcyjnego. Funkcje Allegro i KSeF były rozwijane oraz testowane w środowiskach Allegro Sandbox i KSeF TEST.
+
+Uruchomienie produkcyjne oraz niezależne instalacje Windows są przygotowywane.
+
+## Kontakt
+
+W sprawach technicznych: bloomnote.studio@gmail.com
 
 ---
 
-**Uwaga:** To repozytorium ma charakter wyłącznie informacyjny. Nie zawiera kodu źródłowego aplikacji, danych użytkowników ani poufnych informacji uwierzytelniających.
+*Paura jest niezależnym projektem i nie stanowi oficjalnej aplikacji Allegro ani Ministerstwa Finansów.*
+
+Repozytorium ma charakter wyłącznie informacyjny. Nie zawiera kodu źródłowego aplikacji, danych klientów ani poufnych danych uwierzytelniających.
